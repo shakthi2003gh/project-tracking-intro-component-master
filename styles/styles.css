@@ -156,6 +156,10 @@ a {
 }
 
 @media (min-width: 620px) {
+  header {
+    padding-top: 7rem;
+  }
+
   .menu-button {
     display: none;
   }
