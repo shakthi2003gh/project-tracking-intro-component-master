@@ -1,4 +1,5 @@
 @import url(/styles/normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
 
 *,
 *::after,
@@ -9,4 +10,263 @@
 html {
   font-size: 62.5%;
   min-width: 375px;
+}
+
+/* >Color palette */
+:root {
+  --color-primary: hsl(230, 29%, 20%);
+  --color-secondary: hsl(0, 100%, 68%);
+  --color-accent: hsl(230, 11%, 40%);
+  --color-sub-accent: hsl(231, 7%, 65%);
+  --bg: hsl(207, 33%, 95%);
+}
+
+/* >Typography */
+body {
+  position: relative;
+  font-size: 1.8rem;
+  font-family: "Barlow", sans-serif;
+  min-height: 100vh;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 2rem 0;
+  line-height: 2ch;
+}
+
+h1,
+nav,
+.tag,
+button {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: bold;
+}
+
+nav,
+.tag,
+button,
+.sub2 {
+  letter-spacing: 0.15ch;
+}
+
+h1,
+nav,
+.tag,
+.sub,
+.sub2,
+button {
+  text-transform: uppercase;
+}
+
+.sub {
+  font-size: 1.5rem;
+  letter-spacing: 0.25ch;
+  word-spacing: 0.5ch;
+  opacity: 0.6;
+}
+
+.sub2 {
+  font-size: 1.3rem;
+}
+
+button {
+  font-size: 1.35rem;
+}
+
+@media (min-width: 620px) {
+  h1 {
+    max-width: 550px;
+    font-size: 6rem;
+  }
+
+  p {
+    max-width: 290px;
+    margin: 2.4rem 0;
+  }
+}
+
+/* >background */
+body::before {
+  position: absolute;
+  content: "";
+  left: 50vw;
+  width: 50vw;
+  height: 60vh;
+  border-bottom-left-radius: 50px;
+  background: var(--bg);
+  z-index: -5;
+}
+
+/* >Header */
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  padding: 4rem 3rem;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 25px;
+  height: 25px;
+}
+
+nav {
+  display: none;
+  text-align: center;
+}
+
+nav.open {
+  position: absolute;
+  inset: 0;
+  bottom: auto;
+  display: grid;
+  align-items: center;
+  padding: 2rem;
+  margin: 11rem 3rem;
+  box-shadow: 0 0 14px -9px rgb(0 0 0 / 62%);
+  border-radius: 5px;
+  background: white;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  margin-bottom: 2rem;
+}
+
+a {
+  width: 100%;
+  padding-top: 2rem;
+  border-top: 1px solid;
+  color: var(--color-sub-accent);
+}
+
+:is(li, a):hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (min-width: 620px) {
+  .menu-button {
+    display: none;
+  }
+
+  nav,
+  nav.open {
+    position: static;
+    display: flex;
+    gap: 10rem;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  ol {
+    display: flex;
+    gap: 5rem;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    padding: 0;
+    border: none;
+  }
+}
+
+/* >Main */
+main {
+  padding: 3rem;
+  background: url(/images/illustration-devices.svg) no-repeat 1rem 2rem;
+  background-size: 500px;
+}
+
+.image-section {
+  height: 40vh;
+}
+
+section {
+  margin: 5rem 0;
+}
+
+.tag {
+  font-size: 1.5rem;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  color: white;
+  background-color: var(--color-primary);
+}
+
+div {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sub,
+.sub2 {
+  margin: 0;
+}
+
+@media (min-width: 620px) {
+  body::before {
+    height: 50vh;
+  }
+
+  body::after {
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    content: "";
+
+    background: url(/images/illustration-devices.svg) no-repeat;
+    background-size: 70vw 70vh;
+    width: 60vw;
+    height: 80vh;
+  }
+
+  main {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1440px;
+    margin: 0 auto;
+    background: url(/images/illustration-devices.svg) no-repeat 40vw 5vh;
+    background: none;
+  }
+
+  .image-section {
+    height: 70vh;
+    order: 2;
+  }
+
+  .button-section {
+    margin: 6rem 0;
+  }
+}
+
+/* >Button */
+button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--bg);
+  background: var(--color-secondary);
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
