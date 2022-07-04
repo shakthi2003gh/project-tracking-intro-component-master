@@ -105,7 +105,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
+  max-width: 1240px;
   padding: 4rem 3rem;
   margin: 0 auto;
 }
@@ -227,21 +227,21 @@ div {
 
   body::after {
     position: absolute;
-    top: 20vh;
+    top: 25vh;
     left: 50vw;
     content: "";
 
     background: url(/images/illustration-devices.svg) no-repeat;
-    background-size: 70vw 70vh;
+    background-size: 60vw 60vh;
     width: 60vw;
-    height: 80vh;
+    height: 60vh;
   }
 
   main {
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
-    max-width: 1440px;
+    max-width: 1240px;
     margin: 0 auto;
     background: url(/images/illustration-devices.svg) no-repeat 40vw 5vh;
     background: none;
